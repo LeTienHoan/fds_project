@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>mobilink-component</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/favicon-16x16.png">
+  <!--[if IE]><link rel="shortcut icon" href="/static/img/icons/favicon.ico"><![endif]-->
+  <!-- Add to home screen for Android and modern mobile browsers -->
+  <link rel="manifest" href="<%= htmlWebpackPlugin.files.publicPath %>static/manifest.json">
+  <meta name="theme-color" content="#4DBA87">
+
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="mobilink-component">
+  <link rel="apple-touch-icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/apple-touch-icon-152x152.png">
+  <link rel="mask-icon" href="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/safari-pinned-tab.svg" color="#4DBA87">
+  <!-- Add to home screen for Windows -->
+  <meta name="msapplication-TileImage" content="<%= htmlWebpackPlugin.files.publicPath %>static/img/icons/msapplication-icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#000000">
+  <% for (var chunk of webpack.chunks) {
+        for (var file of chunk.files) {
+          if (file.match(/\.(js|css)$/)) { %>
+    <link rel="<%= chunk.initial?'preload':'prefetch' %>" href="<%= htmlWebpackPlugin.files.publicPath + file %>" as="<%= file.match(/\.css$/)?'style':'script' %>">
+    <% }}} %>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/jquery-comments.css">
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/vue-grid-layout.css">
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/alpaca.min.css">
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/style-comp.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    
+    <script type="text/javascript" src="http://apis.google.com/js/api.js?onload=onApiLoad"></script>
+    <script type="text/javascript" src="https://www.dropbox.com/static/api/2/dropins.js" id="dropboxjs" data-app-key="AXXXXXXXXXXXXXXXXXXXXXX"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" media="only screen and (max-device-width: 480px)" href="http://example.com/iPhone.css" />
+    <link type="text/css" rel="stylesheet" media="only screen and (min-device-width: 768px) and (max-device-width: 1024px)" href="http://example.com/iPad.css" />
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.textcomplete/1.8.0/jquery.textcomplete.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/need_for_coment_handlebars.min.js"></script>
+    <!-- <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/profile_alpaca.js"></script> -->
+    <!-- <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/alpaca.min.js"></script> -->
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/jquery-comments.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/init_driver_script.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/vue-tree-list.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/vue-grid-layout.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/support_browser.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/daypilot-common.src.js" type="text/javascript"></script>
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/daypilot-calendar.src.js" type="text/javascript"></script>
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaApiLoaded&render=explicit" async defer></script>
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/vue-recaptcha@latest/dist/vue-recaptcha.js"></script>
+    <link rel="stylesheet" type="text/css" href="<%= htmlWebpackPlugin.files.publicPath %>static/css/simplebar.css">
+    <script src="<%= htmlWebpackPlugin.files.publicPath %>static/js/simplebar.js"></script>
+  </head>
+
+<body>
+  <noscript>
+    This is your fallback content in case JavaScript fails to load.
+  </noscript>
+  <div style="position: relative;">
+    <div>
+    <!--<div style="height:300px;">-->
+      <h1></h1>
+    </div>
+    <!--<div style="margin-top: 400px; padding-top: 400px;">-->
+    <div>
+      <div id="avtivity"></div>
+      <div id="dashboard"></div>
+      <div id="activity-task"></div>
+      <div id="calendar"></div>
+      <div id="activity-task-guest"></div>
+      <div id="activity-calendar-guest"></div>
+      <div id="folder-managerment"></div>
+      <div id="administration"></div>
+      <div id="task-statistic"></div>
+      <div id="doc-file-mgt"></div>
+      <div id="contact"></div>
+      <div id="employees"></div>
+      <div id="profile"></div>
+      <div id="super-admin"></div>
+      <div id="new-board-mgt"></div>
+      <div id="ForgotPassword"></div>
+      <div id="sotttttv"></div>
+      <div id="sotttttv2"></div>
+      
+    </div>
+    
+
+  </div>
+
+  <script>
+    window.getEval = function (value) {
+      return eval(value)
+    }
+    window.moment.locale('vi')
+  </script>
+
+  <!-- Todo: only include in production -->
+  <%= htmlWebpackPlugin.options.serviceWorkerLoader %>
+    <!-- built files will be auto injected -->
+
+    <script src="https://sp.zalo.me/plugins/sdk.js"></script>
+</body>
+
+</html>
+
